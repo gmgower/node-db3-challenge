@@ -26,3 +26,11 @@ SELECT ProductName,
  ORDER BY ProductName ASC
  LIMIT 3
 -- Display the OrderID, Customer's Company Name and the employee's LastName for every order. All columns should be labeled clearly. Displays 16,789 records.
+SELECT [Order].Id,
+       Customer.CompanyName,
+       Employee.LastName
+  FROM [Order]
+       JOIN
+       Customer ON CustomerId = Customer.Id
+       JOIN
+       Employee ON EmployeeId = Employee.Id;
