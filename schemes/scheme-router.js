@@ -35,6 +35,7 @@ router.get('/:id/steps', (req, res) => {
 
   Schemes.findSteps(id)
   .then(steps => {
+    console.log(steps)
     if (steps.length) {
       res.json(steps);
     } else {
@@ -42,7 +43,7 @@ router.get('/:id/steps', (req, res) => {
     }
   })
   .catch(err => {
-    res.status(500).json({ message: 'Failed to get steps' });
+    res.status(500).json({ message: 'Failed to get steps',err });
   });
 });
 
